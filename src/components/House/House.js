@@ -8,7 +8,6 @@ export default class House extends Component {
     render() {
         return (
             <div className='house'>
-                {this.props.houseObj ? (
                     <div>
                         <img src={this.props.houseObj.image} alt={this.props.houseObj.name}></img>
                         <h3>{this.props.houseObj.name}</h3>
@@ -17,9 +16,8 @@ export default class House extends Component {
                         <h5>{this.props.houseObj.city}</h5>
                         <h5>{this.props.houseObj.state}</h5>
                         <h6>{this.props.houseObj.zip}</h6>
-                        <button className="delete-btn">Delete</button>
+                        <button onClick={() => this.props.deleteHouse(this.props.houseObj.id)} className="delete-btn">Delete</button>
                     </div>
-                ) : null}
             </div>
         )
     }

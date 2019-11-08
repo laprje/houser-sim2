@@ -11,10 +11,13 @@ export default class Wizard extends Component {
             city: '',
             state: '',
             zip: '',
+            image: '',
             show: true
         }
+        this.baseState = this.state;
         this.createHouse = this.createHouse.bind(this);
         this.clearForm = this.clearForm.bind(this);
+        this.addButton = this.addButton.bind(this);
     }
 
     handleChange(e) {
@@ -26,6 +29,7 @@ export default class Wizard extends Component {
     clearForm() {
         let form = document.getElementById('form')
         form.reset();
+        this.setState(this.baseState)
     }
 
     createHouse() {
@@ -107,9 +111,9 @@ export default class Wizard extends Component {
                     <button onClick={this.clearForm} className="cancel-btn">Cancel</button>
                 </Link>
 
-                <Link to='/'>
-                    <button hidden={!this.state.show} onClick={this.addButton} className='complete-btn'>Complete</button>
-                </Link>
+
+                <button hidden={!this.state.show} onClick={this.addButton} className='complete-btn'>Complete</button>
+
             </div>
         )
     }

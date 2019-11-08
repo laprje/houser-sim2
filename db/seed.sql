@@ -13,7 +13,6 @@ CREATE TABLE houses (
 
 -- DUMMY DATA --
 INSERT INTO houses (name,  address, city, state, zip, price, image)
-VALUES ('house1', 'address1', 'city1', 'UT', 11111, 11111111, 'image1'),
-('house2', 'address2', 'city2', 'UT', 22222, 22222222, 'image2'),
-('house3', 'address3', 'city3', 'UT', 33333, 33333333, 'image3')
-;
+VALUES ('house1', 'address1', 'city1', 'UT', 11111, 11111111, 'https://imagez.tmz.com/image/e7/4by3/2019/10/09/e79c6d9690ed403ebca905cc2923ee04_md.jpg'),
+('house2', 'address2', 'city2', 'UT', 22222, 22222222, 'https://imagez.tmz.com/image/e7/4by3/2019/10/09/e79c6d9690ed403ebca905cc2923ee04_md.jpg'),
+('house3', 'address3', 'city3', 'UT', 33333, 33333333, 'https://imagez.tmz.com/image/e7/4by3/2019/10/09/e79c6d9690ed403ebca905cc2923ee04_md.jpg')

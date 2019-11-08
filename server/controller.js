@@ -19,11 +19,26 @@ module.exports = {
 
         db.create_house([name, address, city, state, zip, price, image])
             .then(() => {
+                res.sendStatus(200);
+            })
+            .catch(err => {
+                res.status(500).send("Something went wrong.")
+                console.log(err);
+            })
+    },
+
+    deleteHouse: (req, res) => {
+        const db = req.app.get('db');
+        console.log(req.params)
+        const { id } = req.params;
+
+        db.delete_house(id) 
+            .then(() => {
                 res.sendStatus(200)
             })
             .catch(err => {
                 res.status(500).send("Something went wrong.")
-                console.log(err)
+                console.log(err);
             })
     }
 }
