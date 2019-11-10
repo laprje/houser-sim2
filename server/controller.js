@@ -1,9 +1,9 @@
 module.exports = {
     getAllHouses: (req, res) => {
         const db = req.app.get('db');
-        const { name, address, city, state, zip, price, image } = req.body;
+        const { name, address, city, ST, zip, image, price, mortgage, rent } = req.body;
 
-        db.get_all_houses([name, address, city, state, zip, price, image])
+        db.get_all_houses([name, address, city, ST, zip, image, price, mortgage, rent ])
             .then(houses => {
                 res.status(200).send(houses)
             })
@@ -15,9 +15,9 @@ module.exports = {
 
     createHouse: (req, res) => {
         const db = req.app.get('db');
-        const { name, address, city, state, zip, price, image } = req.body;
+        const { name, address, city, ST, zip, image, price, mortgage, rent } = req.body;
 
-        db.create_house([name, address, city, state, zip, price, image])
+        db.create_house([name, address, city, ST, zip, image, price, mortgage, rent ])
             .then(() => {
                 res.sendStatus(200);
             })
@@ -29,7 +29,7 @@ module.exports = {
 
     deleteHouse: (req, res) => {
         const db = req.app.get('db');
-        console.log(req.params)
+        // console.log(req.params)
         const { id } = req.params;
 
         db.delete_house(id) 
